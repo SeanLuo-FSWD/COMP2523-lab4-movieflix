@@ -16,6 +16,10 @@ app.use((req, res, next) => {
 
 app.set("view engine", "ejs");
 
+app.get("/", (req, res) => {
+  let movieList = ["Inception", "Spiderman", "The Dark Knight", "Tenet"];
+  res.render("pages/index", { movieList: movieList });
+});
 ////////////////////////
 app.get("/ts/posts", (req, res) => {
   res.status(200).json(posts);
